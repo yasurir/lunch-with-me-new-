@@ -79,17 +79,8 @@ class MapScreen extends Component {
       }).then(response => {
           console.log(response);
           if (response.ok) {
-              return response.json()
-                  .then(resJson => {
-                      console.log(resJson);
-                      if (resJson.success) {
-                          alert("location updated successfully ");
-                          this.props.navigation.navigate('test')
-                      } else {
-                          
-                         alert("failed update");
-                      }
-                  });
+              alert("location updated")
+            this.props.navigation.navigate('Profiles')
           } else {
              
               alert(
@@ -104,7 +95,7 @@ class MapScreen extends Component {
           
           alert(
              
-              'request eke awulak',
+              'network request failed',
               
           );
       });
